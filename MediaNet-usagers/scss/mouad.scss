@@ -1,0 +1,45 @@
+.container_mouad{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px, 1fr));
+  grid-gap: 0.9rem;
+  align-items: center;
+  width: auto;
+}
+
+.head_mouad{
+  grid-column:  span 7;
+}
+
+.body_mouad{
+  grid-column: span 7;
+  height: 500px;
+
+    .textarea_mouad{
+      margin-top: 50px;
+  }
+    .rendersearchResults{
+      height: 300px;
+      margin-left: 2%;
+  }
+
+  .renderviewSearch{
+    margin-left: 45%;
+  }
+
+  .button_submit_mouad{
+    background-color: springgreen;
+    border-style: solid;
+    margin-top: 50px;
+  }
+
+  .button_submit_mouad:hover{
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    transform: translateY(-7px);
+  }
+}
+
+
+.footer_mouad{
+  grid-column: span 7;
+}

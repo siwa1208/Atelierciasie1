@@ -1,0 +1,76 @@
+/* Variables pour faire la distinction entre les differentes appareils */
+$largeur_mobile :       480px;
+$largeur_tablette :     600px;
+$couleur_gris :         rgb(214, 214, 214);
+$ombre :                5px 5px 5px rgba(163, 163, 163, 0.5);
+
+.borrow-container {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $couleur_gris;
+    color: darkgray;
+}
+
+.borrow-form {
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;    
+    box-sizing: content-box;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.forms-input {
+    border-radius: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    $ombre : 5px 5px 5px rgba(10, 8, 8, 0.5);
+}
+
+.forms-button {
+    background-color: teal;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: $ombre;
+    margin: 10px;
+    padding: 5px;
+}
+
+@media (min-width: 0) and (max-width : $largeur_mobile) {
+    .borrow-container {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .borrow-form {
+        margin: 0px;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+@media (min-width: ($largeur_mobile + 1)) and (max-width : $largeur_tablette) {
+    .borrow-form {
+        margin: 2px;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+@media (min-width: ($largeur_tablette + 1)) {
+    .borrow-form {
+        margin: 15px;
+        padding: 10px;
+        width: 95%;
+
+    }
+
+    .forms-button {
+        margin-right: 5px;
+    }
+}

@@ -1,0 +1,93 @@
+$nbCol: 12;
+$lgGut: 1.6%;
+$nbGut : $nbCol + 1;
+$lgGutTotal: $nbGut * $lgGut;
+$lgAvTotal: 100% - $lgGutTotal;
+$lgCol: $lgAvTotal / $nbCol;
+
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  background-color: black;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  text-align: center;
+  font-size: 3em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col {
+  margin-left: $lgGut;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@for $i from 1 through $nbCol {
+  .s#{$i}, .m#{$i}, .l#{$i} {
+    width: $i * $lgCol + ($i - 1) * $lgGut;
+  }
+}
+
+@for $i from 1 through $nbCol {
+  .offset-s#{$i}, .offset-m#{$i}, .offset-l#{$i} {
+    margin-left: $i * $lgCol + ($i + 1) * $lgGut;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  @for $i from 1 through $nbCol {
+    .s#{$i} {
+      width: $i * $lgCol + ($i - 1) * $lgGut;
+    }
+  }
+
+  @for $i from 1 through $nbCol {
+    .offset-s#{$i} {
+      margin-left: $i * $lgCol + ($i + 1) * $lgGut;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  @for $i from 1 through $nbCol {
+    .m#{$i} {
+      width: $i * $lgCol + ($i - 1) * $lgGut;
+    }
+  }
+
+  @for $i from 1 through $nbCol {
+    .offset-m#{$i} {
+      margin-left: $i * $lgCol + ($i + 1) * $lgGut;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  @for $i from 1 through $nbCol {
+    .l#{$i} {
+      width: $i * $lgCol + ($i - 1) * $lgGut;
+    }
+  }
+
+  @for $i from 1 through $nbCol {
+    .offset-l#{$i} {
+      margin-left: $i * $lgCol + ($i + 1) * $lgGut;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+$nbCol: 12;
+$lgGut: 1.6%;
+$nbGut : $nbCol + 1;
+$lgGutTotal: $nbGut * $lgGut;
+$lgAvTotal: 100% - $lgGutTotal;
+$lgCol: $lgAvTotal / $nbCol;
+
+* {
+    box-sizing: border-box;
+}
+
+.menu {
+    background-color: black;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    text-align: center;
+    font-size: 3em;
+}
+
+@mixin placement($nbCols, $lgGut, $offset, $lgElement) {
+    $lgCol: (100% - ($nbCols + 1) * $lgGut) / $nbCols;
+
+    width: $lgCol * $lgElement + $lgGut * ($lgElement - 1);
+    margin-left: $lgCol * $offset + $lgGut * ($offset + 1);
+}
+
+@mixin row() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    > * {
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+}
+
+.main {
+    @include row();
+    .menu {
+        @include row();
+        @include placement($nbCol, $lgGut, 0, 12);
+        ul {
+            @include row();
+            li {
+                @include placement($nbCol, $lgGut, 0, 3);
+            }
+        }
+    }
+
+    > div:nth-child(2) {
+        @include placement($nbCol, $lgGut, 0, 12);
+
+        > div:first-child {
+            @include row();
+            > div:first-child {
+                @include placement($nbCol, $lgGut, 0, 8);
+            }
+
+            > div:nth-child(2) {
+                @include placement($nbCol, $lgGut, 0, 4);
+            }
+        }
+
+        > div:nth-child(2) {
+            @include row();
+            > div:first-child {
+                @include placement($nbCol, $lgGut, 0, 6);
+            }
+
+            > div:nth-child(2) {
+                @include placement($nbCol, $lgGut, 0, 6);
+            }
+        }
+
+        > div:nth-child(3) {
+            @include row();
+            > div:first-child {
+                @include placement($nbCol, $lgGut, 0, 12);
+            }
+
+            > div:nth-child(2) {
+                @include placement($nbCol, $lgGut, 0, 6);
+            }
+        }
+
+        > div:nth-child(4) {
+            @include row();
+            > div:first-child {
+                @include placement($nbCol, $lgGut, 0, 12);
+            }
+
+            > div:nth-child(2) {
+                @include placement($nbCol, $lgGut, 0, 6);
+            }
+
+            > div:nth-child(3) {
+                @include placement($nbCol, $lgGut, 0, 6);
+            }
+        }
+
+        > div:nth-child(5) {
+            @include row();
+            > div {
+                @include placement($nbCol, $lgGut, 0, 6);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        @include row();
+        .menu {
+            @include row();
+            @include placement($nbCol, $lgGut, 0, 2);
+            ul {
+                @include row();
+                li {
+                    @include placement($nbCol, $lgGut, 0, 12);
+                }
+            }
+        }
+
+        > div:nth-child(2) {
+            @include placement($nbCol, $lgGut, 0, 10);
+
+            > div:first-child {
+                @include row();
+            }
+
+            > div:nth-child(2) {
+                @include row();
+            }
+
+            > div:nth-child(3) {
+                @include row();
+                > div:first-child {
+                    @include placement($nbCol, $lgGut, 0, 10);
+                }
+
+                > div:nth-child(2) {
+                    @include placement($nbCol, $lgGut, 0, 2);
+                }
+            }
+
+            > div:nth-child(4) {
+                @include row();
+                > div {
+                    @include placement($nbCol, $lgGut, 0, 4);
+                }
+            }
+
+            > div:nth-child(5) {
+                @include row();
+                > div {
+                    @include placement($nbCol, $lgGut, 0, 2);
+                }
+            }
+        }
+    }
+}

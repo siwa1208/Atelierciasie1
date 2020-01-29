@@ -1,0 +1,10 @@
+MediaNet-usagers/conf/
+.idea/
+MediaNet-usagers/scss/.sass-cache/
+MediaNet-usagers/.sass-cache/
+MediaNet-usagers/css/main.css.map
+MediaNet-staff/conf/
+MediaNet-staff/scss/.sass-cache/
+MediaNet-staff/.sass-cache/
+MediaNet-staff/css/main.css.map
+*.map

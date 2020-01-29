@@ -1,0 +1,120 @@
+/* Variables pour faire la distinction entre les differentes appareils 
+et variables */
+$largeur_mobile :       480px;
+$largeur_tablette :     900px;
+$couleur_bouton :      teal;
+$ombre : 5px 5px 5px rgba(163, 163, 163, 0.5);
+
+.login-form {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(214, 214, 214);
+    color: darkgray;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.conteneur_img {
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.forms-text {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin: 5px 0px 5px 0px;
+}
+
+.avatar {
+    width: 100%;
+}
+
+.forms {
+    width: 100%;
+    background-color: white;  
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: $ombre;
+    max-width: 350px;
+    margin: 5px;
+}
+
+.footer_login {
+    font-size: 12px;
+    align-self: center;
+    border-radius: 5px;
+    box-shadow: $ombre;
+    background-color: $couleur_bouton;
+    text-align: center;    margin: 5px;
+    max-width: 350px;
+
+}
+
+.login_link {
+    color: white;
+}
+
+.forms-button {
+    background-color: $couleur_bouton;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px lightgray;
+    margin: 5px 0px 5px 0px;
+    padding: 4px 4px 4px 4px;
+}
+
+.contenu_login_footer {
+    width: 100%;
+    align-self: center;
+}
+
+@media screen and (max-width: $largeur_mobile) {
+    
+    .login-form {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .footer_login {
+        margin: 2px 5px 2px 5px;
+    }
+
+    .forms, .footer_login {
+        width: 100%;
+    }
+
+    .footer_login {
+        font-size: 11px;
+        padding: 2px 2px 2px 2px;
+    }
+}
+
+@media screen and (min-width: ($largeur_mobile + 1)) and (max-width: $largeur_tablette) {
+    .forms {
+        margin: 10px 0px 10px 0px;
+    }
+}
+
+@media screen and (min-width: ($largeur_tablette + 1)) {
+    .login-form {
+        margin: 0px;
+    }
+
+    .forms {
+        padding: 30px;
+    }
+}
